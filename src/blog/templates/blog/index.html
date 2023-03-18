@@ -1,0 +1,112 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<!-- banner -->
+<div class="banner home-banner" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('{%static 'blog/images/homebg.jpg' %}') center/cover no-repeat fixed;">
+  <div class="banner-text">
+    <h1>Revealing Jesus Online and Everywhere</h1>
+    <a href="#introduction">Get Started</a>
+  </div>
+</div>
+<!-- end banner -->
+<main>
+  <article class="section-container" id="introduction">
+    <!-- section-heading -->
+    <div class="section-heading">
+      <h2>About Us</h2>
+    </div>
+    <!-- section-heading -->
+    <div class="introduction-info">
+      <p>Nowadays, the media is being used to fulfill every other agenda apart from the agenda of God. Satan is, of course relentless in his plan to bring at least a filthy content to our faces every day, especially to the Christian so that it becomes a seed of corruption which grows to a mighty tree in the heart.</p>
+      <p>Jesus Over Everything is a global community that stands as part of the army of Christ in media. We intend to join the rest of Jesus' soldiers to fill this space with godly content that reveals more of Jesus to you.</p>
+      <p>This is a meeting point between you and Jesus.</p>
+      <p>You will know Him more before leaving.</p>
+      <p>You are welcome</p>
+    </div>
+  </article>
+  
+  <!-- our mission -->
+  <div class="mission-vision-container">
+    <div class="vision-container" data-aos="fade-up" data-aos-duration="2000">
+      <!-- section-heading -->
+    <div class="section-heading vision-heading">
+      <h2>Our Vision</h2>
+    </div>
+    <!-- section-heading -->
+    <div class="section-container vision">
+      <i class="fas fa-eye"></i>
+      <p>Habakkuk 2:14 summarises our vision; For the earth will be filled with the knowledge of the glory of the LORD, as the waters cover the sea.</p>
+    </div>
+    </div>
+    <div class="mission-container" data-aos="fade-right" data-aos-duration="2000">
+      <!-- section-heading -->
+    <div class="section-heading mision-heading">
+      <h2>Our Mission</h2>
+    </div>
+    <!-- section-heading -->
+    <div class="section-container mission">
+      <i class="fas fa-bullseye"></i>
+      <p>Jesus Over Everything is a movement geared towards making Jesus famous. We long to see those who have not yet known Jesus Christ experience Him and to help Christians grow in their knowledge of Jesus, our Lord.</p>
+    </div>
+    </div>
+  </div>
+  <!-- our mission -->
+  <!-- our founder -->
+  <article class="section-container founder" data-aos="fade-up" data-aos-duration="2000">
+    <!-- section-heading -->
+    <div class="section-heading">
+      <h2>Meet the founder</h2>
+    </div>
+    <!-- section-heading -->
+    <div class="founder-info">
+      <div class="founder-img">
+        <img src="{%static 'blog/images/founder.jpg' %}" alt="" srcset="">
+      </div>
+      <p><b>Dr Seyi Erinle</b> is a medical doctor. He is passionate about Jesus and the expansion of His Kingdom. </p>
+      <p>His greatest joy is seeing people discover their purpose in God, helping them pursue consistent growth and lead great lives. </p>
+    </div>
+  </article>
+  {% if latest_posts %}
+  <!-- end of founder container -->
+  <div class="section-container">
+    <!-- section heading -->
+    <div class="section-heading">
+      <h2>Latest Articles</h2>
+    </div>
+    <!-- end section heading -->
+    <div class="articles">
+      {% for post in latest_posts %}
+      
+            <!-- single article -->
+      <article class="single-article" data-aos="fade-right" data-aos-duration="2000">
+      <div class="article-img-signature">
+        <div class="article-img">
+          <img src="{{post.thumbnail_url}}" alt="" srcset="">
+        </div>
+        <div class="joe-signature">
+          <img src="{%static 'blog/images/logo-sig.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="article-info">
+        <div class="article-date"><i class="fas fa-calendar"></i> {{ post.updated|date:'F d , Y' }}</div>
+        <div class="article-heading">
+          <a href="{{ post.get_absolute_url }}"><h3>{{post.title}}</h3></a>
+        </div>
+        <div class="article-brief">
+          {{ post.content|safe|truncatewords:18 }}
+        </div>
+        <div class="read-more-btn">
+          <a href="{{ post.get_absolute_url }}">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      </article>
+      <!-- end of single article -->
+      {% endfor %}
+
+    </div>
+  </div>
+  {% endif %}
+</main>
+
+{% endblock content %}

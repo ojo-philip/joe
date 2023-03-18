@@ -1,0 +1,68 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- main -->
+<main>
+  <div class="post-banner">
+    <img src="{{post_detail.thumbnail_url}}" alt="" srcset="">
+    <div class="post-banner-info">
+      <h2>{{post_detail.title}}</h2>
+    </div>
+    <div class="post-banner-shade"></div>
+  </div>
+  <!-- end banner -->
+  <!-- our service -->
+  <article class="section-container post-heading">
+    {{post_detail.content|safe}}
+  </article>
+  <!-- end of our article -->
+  <!-- share post -->
+  <div class="section-container">
+    <div class="share-this">
+      <h3>Share This:</h3>
+    </div>
+    <div class="share-links">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}&t={{ share_shring }}"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com/share?text={{ share_shring }}&url={{request.build_absolute_uri}}&hashtags={{ post.title }}"><i class="fab fa-twitter"></i></a>
+      <a href="mailto=?subject=''&amp;body={{ share_shring }}%20{{request.build_absolute_uri}}"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/sharing/share-offsite?url={{request.build_absolute_uri}}"><i class="fab fa-linkedin"></i></a>
+      <a href="https://api.whatsapp.com/send?text={{ share_shring|truncatewords:10 }}%20{{request.build_absolute_uri}}"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <!-- end share post -->
+
+  <!-- recent posts -->
+  <div class="section-container">
+          <!-- section-heading -->
+    <div class="section-heading">
+      <h2>Latest Articles</h2>
+    </div>
+    <!-- section-heading -->
+    <div class="recent-posts">
+      {% for post in recent_posts %}
+        <!-- single recent post -->
+        <article class="single-recent-post">
+          <div class="recent-post-img">
+            <img src="{{post.thumbnail_url}}" alt="{{post.title}}">
+          </div>
+          <div class="recent-post-detail">
+            <div class="recent-post-heading">
+              <a href="{{ post.get_absolute_url }}"><h3>{{post.title}}</h3></a>
+            </div>
+            <div class="recent-post-date">
+              <p><i class="fas fa-calendar"></i> {{ post.updated|date:'F d , Y' }}</p>
+            </div>
+          </div>
+        </article>
+        <!-- end single recent post -->
+      
+      {% endfor %}
+      
+    </div>
+  </div>
+  <!-- end of recent posts -->
+</main>
+<!-- end main -->
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+    {% load static %}
+    {% load article_tags %} 
+    <!-- nav bar -->
+    <nav class="nav-bar">
+      <div class="nav-top">
+
+        <div class="nav-logo">
+          <a href="{% url 'blog:home_page' %}"><img src="{%static 'blog/images/logo.png' %}" alt=""></a>
+        </div>
+        <div class="nav-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <div class="close-links">
+        <div class="nav-close-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <ul class="nav-links">
+          <li class="nav-link"><a href="{% url 'blog:home_page' %}">Home</a></li>
+          <li class="nav-link"><a href="{% url 'blog:about_page' %}">About Us</a></li>
+          <li class="nav-link article-click">Article <i class="fas fa-chevron-down"></i> </li>
+          <div class="article-links">
+            <li class="article-link"><a href="{% url 'blog:blog_page' %}">All Articles</a></li>
+            {% navtag_tags %}
+          </div>
+          <li class="nav-link"><a href="{% url 'youtube:youtube_videos' %}">Worship with JOE</a></li>
+          <li class="nav-link"><a href="{% url 'blog:contact_page' %}">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- end nav bar -->

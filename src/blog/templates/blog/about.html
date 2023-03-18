@@ -1,0 +1,58 @@
+{% extends "blog/base.html" %}
+{% load static %}
+  {% block content %}
+  <div class="banner about-banner" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('{%static 'blog/images/cross1.jpg' %}') center/cover no-repeat fixed;">
+    <div class="banner-text">
+      <h1>About us at Jesus over everything</h1>
+    </div>
+  </div>
+<!-- main -->
+<main>
+  <!-- our mission -->
+  <div class="mission-vision-container">
+    <div class="vision-container" data-aos="fade-up" data-aos-duration="2000">
+      <!-- section-heading -->
+    <div class="section-heading vision-heading">
+      <h2>Our Vision</h2>
+    </div>
+    <!-- section-heading -->
+    <div class="section-container vision">
+      <i class="fas fa-eye"></i>
+      <p>Habakkuk 2:14 summarises our vision; For the earth will be filled with the knowledge of the glory of the LORD, as the waters cover the sea.</p>
+    </div>
+    </div>
+    <div class="mission-container" data-aos="fade-right" data-aos-duration="2000">
+      <!-- section-heading -->
+    <div class="section-heading mision-heading">
+      <h2>Our Mission</h2>
+    </div>
+    <!-- section-heading -->
+    <div class="section-container mission">
+      <i class="fas fa-bullseye"></i>
+      <p>Jesus Over Everything is a movement geared towards making Jesus famous. We long to see those who have not yet known Jesus Christ experience Him and to help Christians grow in their knowledge of Jesus, our Lord.</p>
+    </div>
+    </div>
+    
+  </div>
+  <!-- our mission -->
+  <!-- our founder -->
+  <article class="section-container founder" data-aos="fade-up" data-aos-duration="2000">
+    <!-- section-heading -->
+    <div class="section-heading">
+      <h2>Meet the founder</h2>
+    </div>
+    <!-- section-heading -->
+    <div class="founder-info">
+      <div class="founder-img">
+        <img src="{%static 'blog/images/founder.jpg' %}" alt="" srcset="">
+      </div>
+      <p><b>Dr Seyi Erinle</b> is a medical doctor. He is passionate about Jesus and the expansion of His Kingdom. </p>
+      <p>His greatest joy is seeing people discover their purpose in God, helping them pursue consistent growth and lead great lives. </p>
+    </div>
+  </article>
+  <!-- end of founder container -->
+</main>
+<!-- end main -->
+  
+  {% endblock content %}

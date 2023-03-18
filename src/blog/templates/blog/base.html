@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jesus Over Everything</title>
+  <link rel="stylesheet" href="{%static 'blog/css/styles.css' %}">
+  <link rel="stylesheet" href="{%static 'blog/fontawesome-free-6.2.0-web/css/all.css' %}">
+  <link rel="stylesheet" href="{%static 'blog/css/aos.css' %}">
+  <link rel="stylesheet" href="{%static 'blog/css/owlcarousel/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{%static 'blog/css/owlcarousel/owl.theme.default.min.css' %}">
+  <link rel="shortcut icon" href="{%static 'blog/images/logo.png' %}" type="image/x-icon">
+
+</head>
+<body>
+   <!-- header -->
+  <header>
+    {% include "blog/nav.html" %}
+    {% block banner %}
+    {% endblock banner %}
+  </header>
+  <!-- end header -->
+
+{% block content %}
+{% endblock content %}
+{% include "blog/backtotop.html" %}
+{% include "blog/footer.html" %}
+
+  <script src="{%static 'blog/js/googlejquery.js' %}"></script>
+  <script src="{%static 'blog/js/aos.js' %}"></script>
+  <script src="{%static 'blog/js/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{%static 'blog/js/owlcarousel/owl.autoplay.js' %}"></script>
+  <script src="{%static 'blog/js/utility.js' %}"></script>
+  <script src="{%static 'blog/js/scripts.js' %}"></script>
+  <script>
+    AOS.init()
+  </script>
+</body>
+</html>
