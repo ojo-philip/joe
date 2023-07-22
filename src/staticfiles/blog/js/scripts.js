@@ -5,7 +5,9 @@ let footerDate = document.querySelector(".footer-date")
 let backToTop = document.querySelector(".back-to-top")
 let articleLinks = document.querySelector(".article-links")
 let articleToggle = document.querySelector(".article-click")
-
+let subOverlay = document.querySelector(".sub_overlay");
+let openOverlay = document.querySelector("#subscribe_here");
+let closeOverlay = document.querySelector(".close-overlay");
 
 
 navBtn.addEventListener("click", function(){
@@ -39,3 +41,12 @@ backToTop.addEventListener("click", function(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   })
+
+
+
+openOverlay.addEventListener("click", function(){
+  subOverlay.classList.add("show_overlay")
+})
+closeOverlay.addEventListener("click", function(){
+  subOverlay.classList.remove("show_overlay")
+})

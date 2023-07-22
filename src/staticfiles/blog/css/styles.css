@@ -19,11 +19,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   line-height: 1.5;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  scroll-behavior: smooth;
 }
 
 a {
@@ -232,18 +233,20 @@ p{
   border-radius: 0 1rem 1rem 0;
   margin: 1rem;
   position: absolute;
+  line-height: 1.2;
   top: 10%;
   text-align: center;
   text-transform: capitalize;
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 }
-.banner-text a{
+.banner-text div{
   color: var(--white-clr);
   background: var(--primary-clr);
   padding: 0.5rem ;
   border-radius: var(--border-radius);
   display: inline-block;
   margin: 1rem auto;
+  cursor: pointer;
 }
 @media screen and (min-width: 568px) {
   .banner-text{
@@ -254,13 +257,13 @@ p{
 }
 @media screen and (min-width: 768px) {
   .banner-text{
-    font-size: 1.5rem;
-    width: 500px;
+    font-size: 1.3rem;
+    width: 600px;
 
   }
 }
 .founder{
-  background: var(--light-primary-clr);
+  background: var(--white-clr);
   padding: 2rem;
 }
 .founder-img img{
@@ -363,7 +366,8 @@ p{
   align-items: center;
   justify-content: space-around;
   padding: 1rem 0;
-
+  width: 60%;
+  margin: 0 auto;
 }
 
 .footer-icon {
@@ -556,7 +560,9 @@ p{
 .pagination-item {
   cursor: pointer;
 }
-
+.pagination-item a{
+  color: var(--dark-clr);
+}
 .pagination {
   display: flex;
   justify-content: center;
@@ -565,9 +571,12 @@ p{
   text-align: center;
   margin: 1rem 0;
 }
+.pagination-active a{
+  color: var(--primary-clr);
+}
 
-.prev,
-.next {
+.prev a,
+.next a{
   border: 1px solid var(--primary-clr);
   background: var(--primary-clr);
   color: var(--white-clr);
@@ -691,4 +700,61 @@ p{
 }
 .single-video iframe{
   width: 100%;
+}
+.subscription_container {
+  text-align: center;
+  margin: 4rem;
+  background: var(--white-clr);
+  padding: 2rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+.sub_form input {
+  width: 100%;
+  border: 1px solid var(--primary-clr);
+  border-radius: var(--border-radius);
+  color: var(--primary-clr);
+  outline: none;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  background: transparent;
+}
+
+.sub_form input::placeholder {
+  color: var(--primary-clr);
+}
+
+.sub_form button {
+  width: 100%;
+  cursor: pointer;
+  padding: 1rem;
+  background: var(--primary-clr);
+  color: var(--white-clr);
+  outline: none;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.2rem;
+}
+
+.sub_overlay {
+  background-color: rgba(37, 37, 37, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  transition: var(--transition);
+}
+
+.show_overlay {
+  display: block;
+}
+
+.close-overlay {
+  font-size: 1.5rem;
+  margin: 2rem;
+  color: var(--primary-clr);
+  text-align: right;
+  cursor: pointer;
 }

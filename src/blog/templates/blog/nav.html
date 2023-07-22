@@ -20,11 +20,11 @@
           <li class="nav-link"><a href="{% url 'blog:about_page' %}">About Us</a></li>
           <li class="nav-link article-click">Article <i class="fas fa-chevron-down"></i> </li>
           <div class="article-links">
-            <li class="article-link"><a href="{% url 'blog:blog_page' %}">All Articles</a></li>
+            {% comment %} <li class="article-link"><a href="{% url 'blog:blog_page' %}">All Articles</a></li> {% endcomment %}
             {% navtag_tags %}
           </div>
           <li class="nav-link"><a href="{% url 'youtube:youtube_videos' %}">Worship with JOE</a></li>
-          <li class="nav-link"><a href="{% url 'blog:contact_page' %}">Contact Us</a></li>
+          {% comment %} <li class="nav-link"><a href="{% url 'blog:contact_page' %}">Contact Us</a></li> {% endcomment %}
         </ul>
       </div>
     </nav>
